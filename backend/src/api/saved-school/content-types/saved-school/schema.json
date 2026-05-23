@@ -1,0 +1,30 @@
+{
+  "kind": "collectionType",
+  "collectionName": "saved_schools",
+  "info": {
+    "singularName": "saved-school",
+    "pluralName": "saved-schools",
+    "displayName": "Saved School",
+    "description": "User favorited schools"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "saved_schools"
+    },
+    "school": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::school.school"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

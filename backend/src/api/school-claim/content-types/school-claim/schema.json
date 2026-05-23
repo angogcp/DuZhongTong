@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "school_claims",
+  "info": {
+    "singularName": "school-claim",
+    "pluralName": "school-claims",
+    "displayName": "School Claim",
+    "description": "Requests by users to manage a school profile"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user"
+    },
+    "school": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::school.school"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending"
+    },
+    "contact_info": {
+      "type": "string"
+    },
+    "proof_details": {
+      "type": "text"
+    }
+  }
+}

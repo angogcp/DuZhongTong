@@ -1,0 +1,12 @@
+{
+  "kind": "collectionType",
+  "collectionName": "graduate_destinations",
+  "info": { "singularName": "graduate-destination", "pluralName": "graduate-destinations", "displayName": "GraduateDestination" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "school": { "type": "relation", "relation": "manyToOne", "target": "api::school.school" },
+    "year": { "type": "integer" },
+    "destinations": { "type": "json" },
+    "major_distribution": { "type": "json" }
+  }
+}

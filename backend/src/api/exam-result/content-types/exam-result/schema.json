@@ -1,0 +1,13 @@
+{
+  "kind": "collectionType",
+  "collectionName": "exam_results",
+  "info": { "singularName": "exam-result", "pluralName": "exam-results", "displayName": "ExamResult" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "school": { "type": "relation", "relation": "manyToOne", "target": "api::school.school" },
+    "year": { "type": "integer" },
+    "exam_type": { "type": "enumeration", "enum": ["Junior", "Senior"] },
+    "pass_rate": { "type": "decimal" },
+    "remarks": { "type": "blocks" }
+  }
+}

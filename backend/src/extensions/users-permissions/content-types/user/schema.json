@@ -1,0 +1,10 @@
+{
+  "attributes": {
+    "saved_schools": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::saved-school.saved-school",
+      "mappedBy": "user"
+    }
+  }
+}

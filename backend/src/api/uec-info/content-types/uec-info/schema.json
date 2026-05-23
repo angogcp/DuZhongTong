@@ -1,0 +1,13 @@
+{
+  "kind": "collectionType",
+  "collectionName": "uec_infos",
+  "info": { "singularName": "uec-info", "pluralName": "uec-infos", "displayName": "UecInfo" },
+  "options": { "draftAndPublish": true },
+  "attributes": {
+    "title": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "title" },
+    "content": { "type": "blocks" },
+    "order": { "type": "integer" },
+    "category": { "type": "enumeration", "enum": ["Introduction", "Subjects", "Recognition", "Comparison", "FAQ"] }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "kind": "collectionType",
+  "collectionName": "admissions",
+  "info": { "singularName": "admission", "pluralName": "admissions", "displayName": "Admission" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "school": { "type": "relation", "relation": "oneToOne", "target": "api::school.school" },
+    "intake_year": { "type": "integer" },
+    "application_start": { "type": "date" },
+    "application_end": { "type": "date" },
+    "exam_date": { "type": "date" },
+    "eligibility": { "type": "blocks" },
+    "required_documents": { "type": "blocks" },
+    "application_url": { "type": "string" },
+    "scholarship_available": { "type": "boolean" }
+  }
+}

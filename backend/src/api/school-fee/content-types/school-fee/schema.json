@@ -1,0 +1,20 @@
+{
+  "kind": "collectionType",
+  "collectionName": "school_fees",
+  "info": {
+    "singularName": "school-fee",
+    "pluralName": "school-fees",
+    "displayName": "SchoolFee"
+  },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "school": { "type": "relation", "relation": "oneToOne", "target": "api::school.school" },
+    "fee_year": { "type": "integer" },
+    "registration_fee": { "type": "decimal" },
+    "tuition_fee": { "type": "decimal" },
+    "hostel_fee": { "type": "decimal" },
+    "meal_fee": { "type": "decimal" },
+    "misc_fee": { "type": "decimal" },
+    "total_yearly": { "type": "decimal" }
+  }
+}

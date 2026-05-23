@@ -1,0 +1,16 @@
+{
+  "kind": "collectionType",
+  "collectionName": "hostels",
+  "info": { "singularName": "hostel", "pluralName": "hostels", "displayName": "Hostel" },
+  "options": { "draftAndPublish": false },
+  "attributes": {
+    "school": { "type": "relation", "relation": "oneToOne", "target": "api::school.school" },
+    "male_hostel": { "type": "boolean" },
+    "female_hostel": { "type": "boolean" },
+    "room_type": { "type": "string" },
+    "monthly_fee": { "type": "decimal" },
+    "meal_plan": { "type": "blocks" },
+    "study_hours": { "type": "string" },
+    "safety_notes": { "type": "blocks" }
+  }
+}

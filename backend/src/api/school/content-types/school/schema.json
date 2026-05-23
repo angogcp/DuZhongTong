@@ -1,0 +1,42 @@
+{
+  "kind": "collectionType",
+  "collectionName": "schools",
+  "info": {
+    "singularName": "school",
+    "pluralName": "schools",
+    "displayName": "School",
+    "description": "马来西亚独立中学信息"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name_zh": { "type": "string", "required": true },
+    "name_en": { "type": "string" },
+    "slug": { "type": "uid", "targetField": "name_zh", "required": true },
+    "state": { "type": "enumeration", "enum": ["Johor", "Kedah", "Kelantan", "Melaka", "Negeri Sembilan", "Pahang", "Perak", "Perlis", "Pulau Pinang", "Sabah", "Sarawak", "Selangor", "Terengganu", "Kuala Lumpur"] },
+    "city": { "type": "string" },
+    "address": { "type": "text" },
+    "latitude": { "type": "float" },
+    "longitude": { "type": "float" },
+    "phone": { "type": "string" },
+    "email": { "type": "email" },
+    "website": { "type": "string" },
+    "facebook": { "type": "string" },
+    "established_year": { "type": "integer" },
+    "has_hostel": { "type": "boolean", "default": false },
+    "school_type": { "type": "enumeration", "enum": ["Boys", "Girls", "Coed"], "default": "Coed" },
+    "hero_image": { "type": "media", "multiple": false, "allowedTypes": ["images"] },
+    "gallery": { "type": "media", "multiple": true, "allowedTypes": ["images"] },
+    "summary": { "type": "blocks" },
+    "philosophy": { "type": "blocks" },
+    "motto": { "type": "string" },
+    "education_features": { "type": "blocks" },
+    "curriculum": { "type": "blocks" },
+    "language_env": { "type": "string" },
+    "facilities": { "type": "blocks" },
+    "clubs": { "type": "blocks" },
+    "claimed_by": { "type": "relation", "relation": "oneToOne", "target": "plugin::users-permissions.user" }
+  }
+}

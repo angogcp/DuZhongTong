@@ -1,0 +1,116 @@
+.articleOuter {
+  padding-bottom: 5rem;
+  background: var(--bg-main);
+}
+
+.articleHeader {
+  background: var(--bg-card);
+  padding: 3rem 0;
+  border-bottom: 1px solid var(--border-light);
+  margin-bottom: 3rem;
+}
+
+.backLink {
+  display: inline-block;
+  color: var(--primary-color);
+  font-weight: 600;
+  margin-bottom: 2rem;
+  font-size: 0.95rem;
+  transition: color var(--transition-fast);
+}
+.backLink:hover {
+  text-decoration: underline;
+  color: var(--secondary-color);
+}
+
+.metaTop {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.categoryBadge {
+  background: var(--primary-light);
+  color: var(--primary-color);
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.publishDate {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--text-main);
+  line-height: 1.2;
+  margin-bottom: 1.25rem;
+  max-width: 800px;
+}
+
+.excerpt {
+  font-size: 1.15rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 800px;
+  padding-left: 1rem;
+  border-left: 4px solid var(--border-medium);
+}
+
+/* Content */
+.contentWrapper {
+  max-width: 800px;
+  background: var(--bg-card);
+  padding: 3rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  margin: 0 auto;
+}
+
+.richText {
+  color: var(--text-main);
+}
+.richText p {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+}
+.richText h2, .richText h3 {
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+}
+.richText ul, .richText ol {
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 1.5rem;
+  padding-left: 2rem;
+}
+.richText blockquote {
+  background: var(--bg-subtle);
+  padding: 1.5rem;
+  border-left: 4px solid var(--primary-color);
+  font-style: italic;
+  margin-bottom: 1.5rem;
+}
+
+.emptyText {
+  text-align: center;
+  color: var(--text-muted);
+  padding: 2rem;
+}
+
+/* Not Found */
+.notFound {
+  text-align: center;
+  padding: 6rem 2rem;
+}
+.notFound h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
