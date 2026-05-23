@@ -15,6 +15,17 @@ interface SchoolFiltersProps {
   feeLookup: Record<string, number>;
 }
 
+const campusPhotos: Record<string, string> = {
+  'chong-hwa-kl': '/chong_hwa_campus.png',
+  'confucian-kl': '/confucian_campus.png',
+  'kuen-cheng': '/kuen_cheng_campus.png',
+  'tsun-jin': '/tsun_jin_campus.png',
+  'hin-hua': '/hin_hua_campus.png',
+  'pin-hwa': '/pin_hwa_campus.png',
+  'kwang-hua': '/kwang_hua_campus.png',
+  'chung-hua-klang': '/chung_hua_klang_campus.png',
+};
+
 export default function SchoolFilters({ schools, feeLookup }: SchoolFiltersProps) {
   const [search, setSearch] = useState('');
   const [state, setState] = useState('');
@@ -100,7 +111,14 @@ export default function SchoolFilters({ schools, feeLookup }: SchoolFiltersProps
         {filtered.length > 0 ? (
           filtered.map((school: any) => (
             <Link href={`/schools/${school.slug}`} key={school.documentId} className={styles.card}>
-              <div className={styles.cardHeader}>
+              <div 
+                className={styles.cardHeader}
+                style={campusPhotos[school.slug] ? {
+                  backgroundImage: `linear-gradient(to bottom, rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.35)), url(${campusPhotos[school.slug]})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center'
+                } : undefined}
+              >
                 <div className={styles.cardMeta}>
                   <span className={styles.badge}>{school.state}</span>
                   {school.has_hostel && <span className={`${styles.badge} ${styles.badgeHostel}`}>🏠 宿舍</span>}

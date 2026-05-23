@@ -3,6 +3,18 @@ import Link from 'next/link';
 import BlockRenderer from './BlockRenderer';
 import FeeCalculator from './FeeCalculator';
 
+const campusPhotos: Record<string, string> = {
+  'chong-hwa-kl': '/chong_hwa_campus.png',
+  'confucian-kl': '/confucian_campus.png',
+  'kuen-cheng': '/kuen_cheng_campus.png',
+  'tsun-jin': '/tsun_jin_campus.png',
+  'hin-hua': '/hin_hua_campus.png',
+  'pin-hwa': '/pin_hwa_campus.png',
+  'kwang-hua': '/kwang_hua_campus.png',
+  'chung-hua-klang': '/chung_hua_klang_campus.png',
+};
+
+
 async function getSchoolBySlug(slug: string) {
   try {
     const res = await fetch(`http://127.0.0.1:1337/api/schools?filters[slug][$eq]=${slug}&populate=*`, {
@@ -101,6 +113,24 @@ export default async function SchoolDetailPage({ params }: { params: Promise<{ s
           </div>
         </div>
       </header>
+
+      {/* Campus Banner Image if available */}
+      {campusPhotos[school.slug] && (
+        <div className="container" style={{ marginTop: '2rem' }}>
+          <div style={{ position: 'relative', width: '100%', height: '350px', borderRadius: '16px', overflow: 'hidden', boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05)' }}>
+            <img 
+              src={campusPhotos[school.slug]} 
+              alt={`${school.name_zh} 校园风光`}
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+            />
+            <div style={{ position: 'absolute', bottom: 0, left: 0, right: 0, background: 'linear-gradient(to top, rgba(0,0,0,0.6), transparent)', padding: '2rem 1.5rem', color: 'white' }}>
+              <span style={{ backgroundColor: '#0D9488', color: 'white', padding: '0.25rem 0.75rem', borderRadius: '9999px', fontSize: '0.8rem', fontWeight: 600, letterSpacing: '0.05em' }}>
+                📸 校园实景 · 智能视觉呈现
+              </span>
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* Main Content */}
       <main className={`container ${styles.mainContent}`}>
